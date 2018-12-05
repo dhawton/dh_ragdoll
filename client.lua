@@ -6,7 +6,7 @@ Citizen.CreateThread(function()
         if IsControlJustPressed(2, 82) then
             ragdoll = not ragdoll
         end
-        if IsPedBeingStunned(GetPlayerPed(-1)) then
+        if Config.stunShouldRagdoll and IsPedBeingStunned(GetPlayerPed(-1)) then
             ragdoll = true
         end
     end
