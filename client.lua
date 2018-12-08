@@ -9,6 +9,11 @@ Citizen.CreateThread(function()
         if Config.stunShouldRagdoll and IsPedBeingStunned(GetPlayerPed(-1)) then
             ragdoll = true
         end
+
+        -- Don't ragdoll if player is dead
+        if IsPlayerDead(PlayerId()) and ragdoll == true then
+            ragdoll = false
+        end
     end
 end)
 
